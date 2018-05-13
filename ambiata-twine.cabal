@@ -16,13 +16,13 @@ library
                        base                            >= 3          && < 5
                      , ambiata-p
                      , ambiata-x-eithert
-                     , async                           >= 2.0        && < 2.2
+                     , async                           == 2.*
                      , exceptions                      >= 0.6        && < 0.9
                      , monad-loops                     == 0.4.*
                      , SafeSemaphore                   == 0.10.*
                      , stm                             == 2.4.*
                      , text                            == 1.2.*
-                     , time                            >= 1.4        && < 1.9
+                     , time                            >= 1.4        && < 1.10
                      , transformers                    >= 0.3        && < 0.6
 
   ghc-options:
@@ -63,7 +63,7 @@ test-suite test
                      , ambiata-disorder-core
                      , ambiata-p
                      , ambiata-x-eithert
-                     , async                           >= 2.0        && < 2.2
+                     , async                           == 2.*
                      , exceptions                      >= 0.6        && < 0.9
                      , text                            == 1.2.*
                      , time
@@ -87,7 +87,7 @@ test-suite test-io
                      , ambiata-disorder-core
                      , ambiata-p
                      , ambiata-x-eithert
-                     , async                           >= 2.0        && < 2.2
+                     , async                           == 2.*
                      , exceptions
                      , text
                      , time
