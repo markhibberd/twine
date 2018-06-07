@@ -71,6 +71,15 @@ test-suite test
                      , QuickCheck                      == 2.8.*
                      , quickcheck-instances            == 0.3.*
 
+  other-modules: Test.Twine.Async
+                 Test.Twine.Data.Duration
+                 Test.Twine.Data.Finalizer
+                 Test.Twine.Data.Gate
+                 Test.Twine.Data.Parallel
+                 Test.Twine.Data.Pin
+                 Test.Twine.Data.Queue
+                 Test.Twine.Parallel
+
 test-suite test-io
   type:                exitcode-stdio-1.0
 
@@ -94,6 +103,19 @@ test-suite test-io
                      , QuickCheck                      == 2.8.*
                      , quickcheck-instances            == 0.3.*
 
+  other-modules: Test.Twine.Async
+                 Test.Twine.Data.Duration
+                 Test.Twine.Data.Finalizer
+                 Test.Twine.Data.Gate
+                 Test.Twine.Data.Parallel
+                 Test.Twine.Data.Pin
+                 Test.Twine.Data.Queue
+                 Test.Twine.Parallel
+                 Test.IO.Twine.Guard
+                 Test.IO.Twine.Loop
+                 Test.IO.Twine.Snooze
+
+
 benchmark bench
   type:                exitcode-stdio-1.0
   main-is:             bench.hs
@@ -103,7 +125,10 @@ benchmark bench
                      , ambiata-twine
                      , ambiata-p
                      , ambiata-x-eithert
+                     , ambiata-disorder-core
+                     , async
                      , criterion                       == 1.1.*
+                     , exceptions
                      , QuickCheck
                      , quickcheck-instances            == 0.3.*
                      , quickcheck-properties           == 0.1.*
@@ -111,3 +136,12 @@ benchmark bench
                      , random
                      , text
                      , transformers
+
+  other-modules: Test.Twine.Async
+                 Test.Twine.Data.Duration
+                 Test.Twine.Data.Finalizer
+                 Test.Twine.Data.Gate
+                 Test.Twine.Data.Parallel
+                 Test.Twine.Data.Pin
+                 Test.Twine.Data.Queue
+                 Test.Twine.Parallel
