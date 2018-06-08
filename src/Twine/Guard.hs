@@ -26,7 +26,7 @@ data TerminationAction =
 data TerminationHandler e =
   TerminationHandler {
       onExplosion :: SomeException -> IO TerminationAction
-    , onError :: e -> IO TerminationAction
+    , onErr :: e -> IO TerminationAction
     , onGraceful :: IO TerminationAction
     }
 
@@ -61,7 +61,7 @@ data TerminationHandler e =
 --
 guarded :: TerminationHandler e -> EitherT e IO () -> IO ()
 guarded handler action =
-  let run = runEitherT action >>= either (onError handler) (const . onGraceful $ handler)
+  let run = runEitherT action >>= either (onErr handler) (const . onGraceful $ handler)
       safe = run `catchAll` onExplosion handler `catchAll` (const . pure) Restart
    in safe >>= \a -> when (a == Restart) $ guarded handler action
 
