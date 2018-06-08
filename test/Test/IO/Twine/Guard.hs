@@ -26,7 +26,7 @@ data HResult =
 
 handler v = TerminationHandler {
     onExplosion = const $ putMVar v HExplosion >> pure Die
-  , onError = \t -> putMVar v (HError t) >> pure Die
+  , onErr = \t -> putMVar v (HError t) >> pure Die
   , onGraceful = putMVar v HGraceful >> pure Die
   }
 
